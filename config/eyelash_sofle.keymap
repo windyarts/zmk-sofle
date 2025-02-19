@@ -47,6 +47,47 @@
     };
 
     behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <200>;
+        };
+
+        shifthr: shifthr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFTHR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <185>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <185>;
+        };
+
+        weak: weak {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WEAK";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <230>;
+        };
+
+        backspace: backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BACKSPACE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
+        };
     };
 
     keymap {
